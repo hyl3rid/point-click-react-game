@@ -21,7 +21,7 @@ function Animal({ title, textDescription, image, animalClass, imageClass, setSco
     if (isOpen === false && found) {
       wrapperRef.current.className += " hide"
     }
-  }, [isOpen])
+  }, [isOpen, found])
 
   return (
     <>      

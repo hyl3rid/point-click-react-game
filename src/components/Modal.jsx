@@ -32,7 +32,7 @@ const Modal = ({
         return () => {
             document.removeEventListener("click", checkIfClickedOutside)
         }
-    }, [onClose, isModalOpen])
+    }, [onClose, isModalOpen, imageRef, setIsOpen])
 
     useEffect(() => {
         setModalOpen(isOpen);
