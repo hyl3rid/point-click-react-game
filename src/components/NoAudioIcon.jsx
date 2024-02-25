@@ -1,9 +1,4 @@
-import './Animal.css';
-import { useState, useEffect, useRef } from 'react';
-import Modal from './Modal';
-
 function NoAudioIcon() {
-
   return (
     <>      
         <svg
