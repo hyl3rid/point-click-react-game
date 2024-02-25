@@ -1,0 +1,102 @@
+.deer-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 64%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.deer-wrapper.hide {
+  position: absolute;
+  top: 40%;
+  left: 68%;
+  opacity: 0;
+}
+
+.deer-image {
+  height: 100px;
+}
+
+.monkey-wrapper {
+  position: absolute;
+  top: 20%;
+  left: 40.5%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.monkey-wrapper.hide {
+  position: absolute;
+  top: 20%;
+  left: 36.5%;
+  opacity: 0;
+}
+
+.monkey-image {
+  height: 75px;
+}
+
+.squirrel-wrapper.squirrel-wrapper {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.squirrel-wrapper.squirrel-wrapper.hide {
+  position: absolute;
+  top: 90%;
+  left: 1%;
+  opacity: 0;
+}
+
+.squirrel-image {
+  height: 25px;
+  transform: scaleX(-1);
+}
+
+.black-bird-wrapper.black-bird-wrapper {
+  position: absolute;
+  top: 9%;
+  left: 68.7%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.black-bird-wrapper.black-bird-wrapper.hide {
+  position: absolute;
+  top: 9%;
+  left: 72.7%;
+  opacity: 0;
+}
+
+.black-bird-image {
+  height: 75px;
+  transform: scaleX(-1);
+}
+
+.morpho-wrapper.morpho-wrapper {
+  position: absolute;
+  top: 40%;
+  left: 38%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.morpho-wrapper.morpho-wrapper.hide {
+  position: absolute;
+  top: 40%;
+  left: 34%;
+  opacity: 0;
+}
+
+.morpho-image {
+  height: 13px;
+  transform: scaleX(-1);
+}
+
+.animal-container {
+  position: relative;
+  z-index: 10;
+}
