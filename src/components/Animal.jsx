@@ -23,6 +23,20 @@ function Animal({ title, textDescription, image, animalClass, imageClass, setSco
     }
   }, [isOpen, found])
 
+  useEffect(() => {
+    const animalsAppear = () => {
+      setTimeout(() => {
+        relativeElementRef.current.className += " show";
+      }, 2000)
+    }
+    
+    window.addEventListener("load", animalsAppear)
+      
+    return () => {
+        window.removeEventListener("load", animalsAppear)
+    }
+  }, [relativeElementRef])
+
   return (
     <>      
       <section 

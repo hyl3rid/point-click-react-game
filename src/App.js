@@ -11,7 +11,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const audioRef = useRef();
+  const audioRef = useRef(null);
 
   useEffect(() => {
     if (isPlaying) {
@@ -22,19 +22,20 @@ function App() {
   }, [isPlaying, audioRef]);
 
   const animals = data.map((item, index) => {
-    return <Animal 
-      key={index}
-      setScore={setScore}
-      title={item.title}
-      textDescription={item.textDescription}
-      image={item.image}
-      animalClass={item.animalClass}
-      imageClass={item.imageClass}
-  />
+    return (
+        <Animal 
+          key={index}
+          setScore={setScore}
+          title={item.title}
+          textDescription={item.textDescription}
+          image={item.image}
+          animalClass={item.animalClass}
+          imageClass={item.imageClass}
+        />
+    )
   });
 
   const playAudio = () => {
-    console.log(audioRef)
     setIsPlaying(true)
   }
 
@@ -45,6 +46,7 @@ function App() {
   return (
     <div className="background">
       <img src={Forest} className="background-image" alt="forest"></img>
+
       {isPlaying ? 
         <div className="background__audio-icon" onClick={stopAudio}>
           <AudioIcon />
@@ -53,8 +55,11 @@ function App() {
           <NoAudioIcon />
         </div>
       }
+
       <audio src={Audio} ref={audioRef} />
+
       <h2 className="background__score">Score: {score}/5</h2>
+
       {animals}
     </div>
   );
