@@ -1,21 +1,23 @@
 import './Modal.css';
-import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
+import { AnimalDispatchContext } from '../context/AnimalProvider';
+
 const Modal = ({ 
+        title, 
+        textDescription, 
         isOpen, 
         setIsOpen, 
         setFound, 
         onClose, 
         relativeRectRef, 
-        title, 
-        textDescription, 
         imageRef,
-        setScore,
         children }) => {
+
+    const [setScore] = useContext(AnimalDispatchContext)
     const modalRef = useRef(null);
     const windowHeight = useRef(window.innerHeight);
 
-    const [isModalOpen, setModalOpen] = useState(isOpen);
+    const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -35,7 +37,7 @@ const Modal = ({
     }, [onClose, isModalOpen, imageRef, setIsOpen])
 
     useEffect(() => {
-        setModalOpen(isOpen);
+        setIsModalOpen(isOpen);
     }, [isOpen])
 
     useEffect(() => {

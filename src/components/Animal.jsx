@@ -2,48 +2,48 @@ import './Animal.css';
 import { useState, useEffect, useRef } from 'react';
 import Modal from './Modal';
 
-function Animal({ title, textDescription, image, animalClass, imageClass, setScore }) {
-  const [found, setFound] = useState(false);
+function Animal({ title, textDescription, image, animalClass, imageClass }) {
+  const [found, setFound] = useState(false); 
   const [isOpen, setIsOpen] = useState(false);
   const [onClose, setOnClose] = useState(true);
+  const [rect, setRect] = useState();
+
   const relativeElementRef = useRef(null);
   const wrapperRef = useRef(null);
   const imageRef = useRef(null);
-  const [rect, setRect] = useState();
 
   const openModal = () => {
     setIsOpen(true);
     setOnClose(false)
-    setRect(relativeElementRef.current.getBoundingClientRect())
+    setRect(relativeElementRef.current?.getBoundingClientRect())
   }
 
   useEffect(() => {
     if (isOpen === false && found) {
-      wrapperRef.current.className += " hide"
+      wrapperRef.current.className += " hide";
     }
   }, [isOpen, found])
 
   useEffect(() => {
     const animalsAppear = () => {
       setTimeout(() => {
-        relativeElementRef.current.className += " show";
+        relativeElementRef.current.className += " show" ;
       }, 2000)
     }
-    
-    window.addEventListener("load", animalsAppear)
-      
-    return () => {
-        window.removeEventListener("load", animalsAppear)
-    }
-  }, [relativeElementRef])
+      window.addEventListener("load", animalsAppear)
+        
+      return () => {
+          window.removeEventListener("load", animalsAppear)
+      }
+  }, [])
 
   return (
-    <>      
+    <>    
       <section 
         className={animalClass} 
         ref={wrapperRef}
       >
-        <div className="animal-container" ref={relativeElementRef}>
+        <div className={`animal-container`} ref={relativeElementRef}>
           <Modal
               title={title}
               textDescription={textDescription}
@@ -53,13 +53,13 @@ function Animal({ title, textDescription, image, animalClass, imageClass, setSco
               onClose={onClose}
               relativeRectRef={rect}
               imageRef={imageRef}
-              setScore={setScore}
+              relativeElementRef={relativeElementRef}
           />
           <img 
             ref={imageRef}
             src={image} 
             className={imageClass} 
-            alt="Deer" 
+            alt={title} 
             onClick={openModal}
             ></img>
         </div>

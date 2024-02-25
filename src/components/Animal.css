@@ -116,6 +116,46 @@
   transform: scaleX(-1);
 }
 
+.flower-wrapper.flower-wrapper {
+  position: absolute;
+  top: 55%;
+  left: 15%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.flower-wrapper.flower-wrapper.hide {
+  position: absolute;
+  top: 55%;
+  left: 11%;
+  opacity: 0;
+}
+
+.flower-image {
+  height: 25px;
+  transform: scaleX(-1);
+}
+
+.humming-wrapper.humming-wrapper {
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.humming-wrapper.humming-wrapper.hide {
+  position: absolute;
+  top: 35%;
+  left: 21%;
+  opacity: 0;
+}
+
+.humming-image {
+  height: 32px;
+  transform: scaleX(-1);
+}
+
 .animal-container {
   position: relative;
   z-index: 10;

@@ -1,14 +1,15 @@
 import './App.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import Animal from "./components/Animal";
 import data from './data/data';
 import Forest from './assets/forest.jpg';
 import AudioIcon from './components/AudioIcon';
 import NoAudioIcon from './components/NoAudioIcon';
 import Audio from './audio/birds.mp3'
+import { AnimalContext } from './context/AnimalProvider';
 
 function App() {
-  const [score, setScore] = useState(0);
+  const [score] = useContext(AnimalContext)
   const [isPlaying, setIsPlaying] = useState(false);
 
   const audioRef = useRef(null);
@@ -25,7 +26,6 @@ function App() {
     return (
         <Animal 
           key={index}
-          setScore={setScore}
           title={item.title}
           textDescription={item.textDescription}
           image={item.image}

@@ -5,6 +5,8 @@ import SquirrelImg from "../assets/squirrel-transparent-background.png"
 import BlackBirdImg from "../assets/bird-transparent-background.png"
 import MorphoImg from "../assets/morpho-transparent-background.png"
 import SnakeImg from "../assets/snake-transparent-background.png"
+import FlowerImg from "../assets/flower-transparent-background.png"
+import HummingImg from "../assets/humming-transparent-background.png"
 
 const animals = [
     {
@@ -44,10 +46,24 @@ const animals = [
     },
     {
         title: "Green Snake",
-        textDescription: "Dignissimos pariatur eum lorem ipsum dolor pariatur eum architecto excepturi alias. Architecto excepturi alias lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
+        textDescription: "Dignissimos pariatur eum lorem ipsum dolor pariatur eum architecto excepturi alias. Architecto excepturi alias lorem ipsum dolor, sit amet consectetur adipisicing elit.",
         image: SnakeImg,
         animalClass: "snake-wrapper",
         imageClass: "snake-image"
+    },
+    {
+        title: "Beautiful Flower",
+        textDescription: "Dignissimos pariatur eum lorem ipsum dolor pariatur eum architecto excepturi alias.",
+        image: FlowerImg,
+        animalClass: "flower-wrapper",
+        imageClass: "flower-image"
+    },
+    {
+        title: "Humming Bird",
+        textDescription: "Architecto excepturi alias. Dignissimos pariatur eum lorem ipsum dolor pariatur eum architecto excepturi alias.",
+        image: HummingImg,
+        animalClass: "humming-wrapper",
+        imageClass: "humming-image"
     }
 ]
 

@@ -5,6 +5,7 @@
 .modal {
     margin: 0;
     width: 300px;
+    border: none;
 }
 
 dialog::backdrop {
@@ -18,4 +19,9 @@ dialog::backdrop {
 
 .modal__text {
     font-size: 14px;
+}
+
+.modal-close-btn {
+    border: none;
+    padding: 10px 20px;
 }
