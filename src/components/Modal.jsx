@@ -71,7 +71,7 @@ const Modal = ({
                 className="modal"
                 style={{
                     position: 'fixed',
-                    top: `${windowHeight.current < relativeRectRef?.top + 100 ? relativeRectRef?.top - 200 : relativeRectRef?.top + 100 }px`,
+                    top: `${windowHeight.current < relativeRectRef?.top + 250 ? relativeRectRef?.top - 225 : relativeRectRef?.top + 100 }px`,
                     left: `${relativeRectRef?.left - 70}px`,
                 }}
             >

@@ -58,7 +58,7 @@ function App() {
 
       <audio src={Audio} ref={audioRef} />
 
-      <h2 className="background__score">Score: {score}/5</h2>
+      <h2 className="background__score">Score: {score}/{data.length}</h2>
 
       {animals}
     </div>

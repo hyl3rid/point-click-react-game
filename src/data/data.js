@@ -4,6 +4,7 @@ import MonkeyImg from "../assets/monkey-transparent-background.png"
 import SquirrelImg from "../assets/squirrel-transparent-background.png"
 import BlackBirdImg from "../assets/bird-transparent-background.png"
 import MorphoImg from "../assets/morpho-transparent-background.png"
+import SnakeImg from "../assets/snake-transparent-background.png"
 
 const animals = [
     {
@@ -40,6 +41,13 @@ const animals = [
         image: MorphoImg,
         animalClass: "morpho-wrapper",
         imageClass: "morpho-image"
+    },
+    {
+        title: "Green Snake",
+        textDescription: "Dignissimos pariatur eum lorem ipsum dolor pariatur eum architecto excepturi alias. Architecto excepturi alias lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
+        image: SnakeImg,
+        animalClass: "snake-wrapper",
+        imageClass: "snake-image"
     }
 ]
 

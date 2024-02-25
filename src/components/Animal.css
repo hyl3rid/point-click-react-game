@@ -96,6 +96,26 @@
   transform: scaleX(-1);
 }
 
+.snake-wrapper.snake-wrapper {
+  position: absolute;
+  top: 72%;
+  left: 73%;
+  transition: all 1s;
+  opacity: 1;
+}
+
+.snake-wrapper.snake-wrapper.hide {
+  position: absolute;
+  top: 72%;
+  left: 77%;
+  opacity: 0;
+}
+
+.snake-image {
+  height: 50px;
+  transform: scaleX(-1);
+}
+
 .animal-container {
   position: relative;
   z-index: 10;
