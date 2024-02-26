@@ -149,6 +149,7 @@
   top: 55%;
   left: 15%;
   transition: all 1s;
+  -webkit-transition: all 1s;
   opacity: 1;
 }
 
