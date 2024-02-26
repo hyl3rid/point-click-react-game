@@ -44,7 +44,7 @@ const Timer = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [timerExpired]);
+  }, [timerExpired, getTime]);
 
   return (
     <div className="timer">

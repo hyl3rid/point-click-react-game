@@ -32,7 +32,7 @@ function App() {
     if (score === data.length) {
       setWon(true)
     }
-  }, [score])
+  }, [score, setWon])
 
   const animals = data.map((item, index) => {
     return (
