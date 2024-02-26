@@ -44,7 +44,7 @@ const Timer = () => {
 
   return (
     <div className="timer">
-        <h1>{timer}</h1>   
+        <h1 className="timer__text">{timer}</h1>   
         <GameModals isModalOpen={isModalOpen}>
             <h2>You scored {score}/{data.length}!</h2>
             <button className="end-game-modal__play-again" onClick={() => {window.location.reload(false)}}>Play Again?</button>

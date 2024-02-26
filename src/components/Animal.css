@@ -76,6 +76,20 @@
   transform: scaleX(-1);
 }
 
+@media only screen and (max-width: 600px) {
+  .black-bird-wrapper.black-bird-wrapper {
+    position: absolute;
+    top: 15%;
+    left: 12.7%;
+  }
+  
+  .black-bird-wrapper.black-bird-wrapper.hide {
+    position: absolute;
+    top: 9%;
+    left: 72.7%;
+  }
+}
+
 .morpho-wrapper.morpho-wrapper {
   position: absolute;
   top: 40%;
@@ -114,6 +128,20 @@
 .snake-image {
   height: 50px;
   transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 1024px) {
+  .snake-wrapper.snake-wrapper {
+    position: absolute;
+    top: 88%;
+    left: 65%;
+  }
+  
+  .snake-wrapper.snake-wrapper.hide {
+    position: absolute;
+    top: 88%;
+    left: 69%;
+  }
 }
 
 .flower-wrapper.flower-wrapper {

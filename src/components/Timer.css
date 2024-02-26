@@ -6,6 +6,10 @@
     transform: translate(-50%, 0);
 }
 
+.timer__text {
+    margin: 0;
+}
+
 .end-game-modal[open] {
     border: none;
     width: 250px;
