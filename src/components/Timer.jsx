@@ -28,12 +28,12 @@ const Timer = () => {
     } else if (secondsPassed > minutes * seconds) {
       setTimerExpired(true);
       setTimer("00:00")
-      setIsModalOpen(true)
+      setIsModalOpen(true);
     } else {
       setTimerExpired(false);
       setIsModalOpen(false)
     }
-  });
+  }, [won]);
 
   useEffect(() => {
     const startTime = Math.floor(Date.now() / 1000)
