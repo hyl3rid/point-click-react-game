@@ -23,3 +23,16 @@
   right: 25px;
   height: 70px;
 }
+
+.background__help-icon {
+  position: absolute;
+  top: 25px;
+  right: 125px;
+  height: 70px;
+}
+
+.background__button {
+  border: none;
+  padding: 15px 25px;
+  background-color: rgb(147, 232, 149);
+}

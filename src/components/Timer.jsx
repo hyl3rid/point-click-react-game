@@ -11,8 +11,6 @@ const Timer = () => {
   const [timerExpired, setTimerExpired] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const endGameRef = useRef(null);
-
   const [score] = useContext(AnimalContext)
 
   const getTime = (startTime) => {
