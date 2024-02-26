@@ -16,7 +16,6 @@ const Modal = ({
     const [setScore] = useContext(AnimalDispatchContext)
     const modalRef = useRef(null);
     const windowHeight = useRef(window.innerHeight);
-    const windowWidth = useRef(window.innerWidth);
     const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
     useEffect(() => {
