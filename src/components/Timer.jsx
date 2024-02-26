@@ -1,6 +1,6 @@
 import './Timer.css'
 import data from '../data/data'
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useCallback } from 'react';
 import { AnimalContext } from '../context/AnimalProvider';
 import GameModals from './GameModals';
 import Button from './Button';
@@ -12,7 +12,7 @@ const Timer = () => {
 
   const [score, won] = useContext(AnimalContext)
 
-  const getTime = (startTime) => {
+  const getTime = useCallback((startTime) => {
     const seconds = 60;
     const minutes = 5;
     let time = Math.floor(Date.now() / 1000)
@@ -33,7 +33,7 @@ const Timer = () => {
       setTimerExpired(false);
       setIsModalOpen(false)
     }
-  };
+  });
 
   useEffect(() => {
     const startTime = Math.floor(Date.now() / 1000)
