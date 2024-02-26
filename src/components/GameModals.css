@@ -1,0 +1,18 @@
+.game-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.game-modal[open] {
+    border: none;
+    width: 250px;
+    height: 350px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -5,10 +5,13 @@ const AnimalDispatchContext = createContext(undefined);
 
 const AnimalProvider = ({children}) => {
     const [score, setScore] = useState(0);
+    const [won, setWon] = useState(false)
     
     return (
         <AnimalContext.Provider value={[
             score, 
+            won,
+            setWon,
         ]}>
             <AnimalDispatchContext.Provider value={[
                 setScore, 

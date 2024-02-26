@@ -8,14 +8,16 @@ import NoAudioIcon from './components/NoAudioIcon';
 import QuestionMarkIcon from './components/QuestionMarkIcon';
 import GameModals from './components/GameModals';
 import Timer from './components/Timer';
+import Button from './components/Button';
 import Audio from './audio/birds.mp3'
 import { AnimalContext } from './context/AnimalProvider';
 
 function App() {
-  const [score] = useContext(AnimalContext)
+  const [score, won, setWon] = useContext(AnimalContext)
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -25,6 +27,12 @@ function App() {
       audioRef.current.pause();
     }
   }, [isPlaying, audioRef]);
+
+  useEffect(() => {
+    if (score === data.length) {
+      setWon(true)
+    }
+  }, [score])
 
   const animals = data.map((item, index) => {
     return (
@@ -38,6 +46,17 @@ function App() {
         />
     )
   });
+
+  const youWon = () => {
+    return (
+      <GameModals isModalOpen={true}>
+        <h2>You WON!!!</h2>
+        <div className="mt-50" onClick={() => {window.location.reload(false)}}>
+          <Button>Play Again?</Button>
+        </div>
+      </GameModals>
+    )
+  }
 
   const playAudio = () => {
     setIsPlaying(true)
@@ -74,10 +93,14 @@ function App() {
           <QuestionMarkIcon />
         </div>
 
+      {won && youWon()}
+
       <GameModals isModalOpen={isModalOpen}>
         <h2>Instructions to play the game!</h2>
         <p>Just click on things you find interesting in the scene and find out information about them.</p>
-        <button className="background__button" onClick={closeHelp}>Continue</button>
+        <div className="mt-50" onClick={closeHelp}>
+          <Button>Continue</Button>
+        </div>
       </GameModals>
 
       <audio src={Audio} ref={audioRef} />

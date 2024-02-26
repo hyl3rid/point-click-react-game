@@ -1,6 +1,7 @@
 import './Modal.css';
 import { useState, useEffect, useRef, useContext } from "react";
 import { AnimalDispatchContext } from '../context/AnimalProvider';
+import Button from './Button';
 
 const Modal = ({ 
         title, 
@@ -78,9 +79,11 @@ const Modal = ({
             >
                 <h4 className="modal__title">{ title }</h4>
                 <p className="modal__text">{ textDescription }</p>
-                <button className="modal-close-btn" onClick={handleCloseModal}>
-                    Continue
-                </button>
+                <div onClick={handleCloseModal}>
+                    <Button>
+                        Continue
+                    </Button>
+                </div>
                 {children}
             </dialog>
         </div>

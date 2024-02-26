@@ -1,0 +1,13 @@
+.btn {
+    border: none;
+    padding: 10px 20px;
+    background-color: rgb(147, 232, 149);
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.btn:focus-visible {
+    outline: none;
+}

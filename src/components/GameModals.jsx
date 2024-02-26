@@ -1,4 +1,4 @@
-import './Timer.css'
+import './GameModals.css'
 
 import {  useEffect, useRef } from 'react';
 
@@ -18,7 +18,7 @@ const GameModals = ({isModalOpen, children}) => {
   }, [isModalOpen]);
 
   return (
-    <dialog ref={endGameRef} className="end-game-modal">
+    <dialog ref={endGameRef} className="game-modal">
         {children}
     </dialog> 
   );

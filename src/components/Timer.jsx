@@ -3,13 +3,14 @@ import data from '../data/data'
 import { useState, useEffect, useContext } from 'react';
 import { AnimalContext } from '../context/AnimalProvider';
 import GameModals from './GameModals';
+import Button from './Button';
 
 const Timer = () => {
   const [timer, setTimer] = useState("00:00");
   const [timerExpired, setTimerExpired] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [score] = useContext(AnimalContext)
+  const [score, won] = useContext(AnimalContext)
 
   const getTime = (startTime) => {
     const seconds = 60;
@@ -20,14 +21,17 @@ const Timer = () => {
     let num = (secondsPassed % seconds).toString();
     while (num.length < 2) num = "0" + num;
 
-    setTimer(`0${Math.floor(secondsPassed / 60)}:${num}`)
-    if (secondsPassed > minutes * seconds) {
-        setTimerExpired(true);
-        setTimer("00:00")
-        setIsModalOpen(true)
+    setTimer(`0${Math.floor(secondsPassed / seconds)}:${num}`)
+    if (won) {
+      setTimer("00:00")
+      setTimerExpired(true);
+    } else if (secondsPassed > minutes * seconds) {
+      setTimerExpired(true);
+      setTimer("00:00")
+      setIsModalOpen(true)
     } else {
-        setTimerExpired(false);
-        setIsModalOpen(false)
+      setTimerExpired(false);
+      setIsModalOpen(false)
     }
   };
 
@@ -47,7 +51,9 @@ const Timer = () => {
         <h1 className="timer__text">{timer}</h1>   
         <GameModals isModalOpen={isModalOpen}>
             <h2>You scored {score}/{data.length}!</h2>
-            <button className="end-game-modal__play-again" onClick={() => {window.location.reload(false)}}>Play Again?</button>
+            <div className="mt-50" onClick={() => {window.location.reload(false)}}>
+              <Button>Play Again?</Button>
+            </div>
         </GameModals>
     </div>
   );

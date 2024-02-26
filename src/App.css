@@ -39,15 +39,3 @@
     height: 70px;
   }
 }
-
-.background__button {
-  border: none;
-  padding: 15px 25px;
-  background-color: rgb(147, 232, 149);
-  margin-top: 50px;
-}
-
-.background__button:focus-visible {
-  outline: none;
-}
-
