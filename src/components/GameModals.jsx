@@ -1,7 +1,6 @@
 import './Timer.css'
-import data from '../data/data'
-import { useState, useEffect, useRef, useContext } from 'react';
-import { AnimalContext } from '../context/AnimalProvider';
+
+import {  useEffect, useRef } from 'react';
 
 const GameModals = ({isModalOpen, children}) => {
 
@@ -10,7 +9,6 @@ const GameModals = ({isModalOpen, children}) => {
   useEffect(() => {
     const modalElement = endGameRef.current;
     if (modalElement) {
-        console.log(isModalOpen)
         if (isModalOpen) {
         modalElement.showModal();
         } else {

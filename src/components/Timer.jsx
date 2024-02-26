@@ -1,12 +1,10 @@
 import './Timer.css'
 import data from '../data/data'
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { AnimalContext } from '../context/AnimalProvider';
 import GameModals from './GameModals';
 
 const Timer = () => {
-  const [minutes, setMinutes] = useState(5);
-  const [seconds, setSeconds] = useState(60);
   const [timer, setTimer] = useState("00:00");
   const [timerExpired, setTimerExpired] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +12,8 @@ const Timer = () => {
   const [score] = useContext(AnimalContext)
 
   const getTime = (startTime) => {
+    const seconds = 60;
+    const minutes = 5;
     let time = Math.floor(Date.now() / 1000)
     let secondsPassed = time - startTime
 
@@ -40,7 +40,7 @@ const Timer = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [timerExpired]);
 
   return (
     <div className="timer">
