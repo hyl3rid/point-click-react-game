@@ -24,4 +24,9 @@ dialog::backdrop {
 .modal-close-btn {
     border: none;
     padding: 10px 20px;
+    background-color: rgb(147, 232, 149);
+}
+
+.modal-close-btn:focus-visible {
+    outline: none;
 }

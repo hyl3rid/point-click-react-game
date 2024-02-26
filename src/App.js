@@ -5,6 +5,7 @@ import data from './data/data';
 import Forest from './assets/forest.jpg';
 import AudioIcon from './components/AudioIcon';
 import NoAudioIcon from './components/NoAudioIcon';
+import Timer from './components/Timer';
 import Audio from './audio/birds.mp3'
 import { AnimalContext } from './context/AnimalProvider';
 
@@ -46,6 +47,8 @@ function App() {
   return (
     <div className="background">
       <img src={Forest} className="background-image" alt="forest"></img>
+
+      <Timer />
 
       {isPlaying ? 
         <div className="background__audio-icon" onClick={stopAudio}>
