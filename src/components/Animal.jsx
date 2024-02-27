@@ -30,11 +30,7 @@ function Animal({ title, textDescription, image, animalClass, imageClass }) {
         relativeElementRef.current.className += " show" ;
       }, 2000)
     }
-      window.addEventListener("load", animalsAppear)
-        
-      return () => {
-          window.removeEventListener("load", animalsAppear)
-      }
+    animalsAppear();
   }, [])
 
   return (
